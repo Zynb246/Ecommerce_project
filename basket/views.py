@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404,render
 from django.http import JsonResponse
 
 from store.models import Product 
@@ -16,7 +16,7 @@ def basket_add(request):
         product = get_object_or_404(Product, id=product_id)
         basket.add(product=product, qty=product_qty)
 
-        basketqty = basket.__len__()
+        #basketqty  = basket.__len__()
         response = JsonResponse({'qty': product_qty})
 
         return response 

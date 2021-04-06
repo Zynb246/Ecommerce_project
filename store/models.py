@@ -27,7 +27,7 @@ class Product(models.Model):
     title = models.CharField(max_length=55)
     author = models.CharField(max_length=55)
     description = models.TextField(blank=True)
-    image = models.ImageField(upload_to='images/', default='images/image.png')
+    image = models.ImageField(upload_to='images/', default='images/no-image.png')
     slug = models.SlugField(max_length=55)
     price = models.DecimalField(max_digits=4, decimal_places=2)
     in_stock = models.BooleanField(default=True)
